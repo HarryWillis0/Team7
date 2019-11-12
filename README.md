@@ -1,2 +1,2 @@
 # Team7
-Project 1 for OOSD
+JavaScript, HTML, and CSS project for OOSD
