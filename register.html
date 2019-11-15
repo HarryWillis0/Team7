@@ -1,8 +1,66 @@
+<!-- An account registration webpage for a travel agency's website 
+ * Author: Harry Willis
+ * Date modified: 11/15/2019
+-->
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Register</title>
 	</head>
 	<body>
+		<table>
+			<form id="custReg">
+				<tr>
+					<!-- data for customer to enter -->
+					<td><label for="f_name">Full Name:</label></td>
+					<td><input type="text" id="f_name" placeholder="full name" /></td>
+				</tr>
+				<tr>
+					<td><label for="addr_l1">Address Line 1:</label></td>
+					<td><input type="text" id="addr_l1" placeholder="street/ave address" /></td>
+				</tr>
+				<tr>
+					<td><label for="addr_l2">Address Line 2:</label></td>
+					<td><input type="text" id="addr_l2" placeholder="suite #" /></td>
+				</tr>
+				<tr>
+					<td><label for="city">City:</label></td>
+					<td><input type="text" id="city" placeholder="city" /></td>
+				</tr>
+				<tr>
+					<td><label for="prov">Province:</label></td>
+					<td><input type="text" id="prov" placeholder="province abbreviation eg. AB" /></td>
+				</tr>
+				<tr>
+					<td><label for="country">Country:</label></td>
+					<td><input type="text" id="country" placeholder="country" /></td>
+				</tr>
+				<tr>
+					<td><label for="email">Email:</label></td>
+					<td><input type="text" id="email" placeholder="email address  eg. johnsmith@example.com" /></td>
+				</tr>
+				<tr>
+					<td><label for="home_num">Home phone number:</label></td>
+					<td><input type="text" id="home_num" placeholder="home phone number eg. +1 403 123 4567" /></td>
+				</tr>
+				<tr>
+					<td><label for="busi_num">Business phone number:</label></td>
+					<td><input type="text" id="busi_num" placeholder="business phone number eg. +1 403 123 4567" /></td>
+				</tr>
+				<tr>
+					<td><label for="user_name">User name:</label></td>
+					<td><input type="text" id="user_name" placeholder="desired username" /></td>
+				</tr>
+				<tr>
+					<td><label for="pass">Password:</label></td>
+					<td><input type="password" id="pass" /></td>
+				</tr>
+				<tr>
+					<!-- register / reset buttons-->
+					<td><input type="submit" value="Register" />
+					<input type="reset" /></td>
+				</tr>
+			</form>
+		</table>
 	</body>
 </html>
