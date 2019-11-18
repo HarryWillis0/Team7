@@ -10,6 +10,7 @@
 	</head>
 	<body>
 		<table>
+			<!-- TO DO: move git dir to xampp htdocs to use bouncer.php properly -->
 			<form id="custReg" action="bouncer.php" method="POST" target="_blank">
 				<tr>
 					<!-- data for customer to enter -->
@@ -17,12 +18,8 @@
 					<td><input type="text" id="f_name" name="full name" placeholder="full name" /></td>
 				</tr>
 				<tr>
-					<td><label for="addr_l1">Address Line 1:</label></td>
-					<td><input type="text" id="addr_l1" name="address line 1" placeholder="street/ave address" /></td>
-				</tr>
-				<tr>
-					<td><label for="addr_l2">Address Line 2:</label></td>
-					<td><input type="text" id="addr_l2" name="address line 2" placeholder="suite #" /></td>
+					<td><label for="addr">Address:</label></td>
+					<td><input type="text" id="addr" name="address line 1" placeholder="suite #, street/ave address" /></td>
 				</tr>
 				<tr>
 					<td><label for="city">City:</label></td>
@@ -33,20 +30,24 @@
 					<td><input type="text" id="prov" name="province" placeholder="province abbreviation eg. AB" /></td>
 				</tr>
 				<tr>
+					<td><lavel for="postal">Postal code:</lavel></td>
+					<td><input type="text" id="postal" name="postal code" placeholder="postal code" /></td>
+				</tr>
+				<tr>
 					<td><label for="country">Country:</label></td>
 					<td><input type="text" id="country" name="country" placeholder="country" /></td>
 				</tr>
 				<tr>
 					<td><label for="email">Email:</label></td>
-					<td><input type="text" id="email" name="email" placeholder="email address  eg. johnsmith@example.com" /></td>
+					<td><input type="text" id="email" name="email" placeholder="eg. johnsmith@example.com" /></td>
 				</tr>
 				<tr>
 					<td><label for="home_num">Home phone number:</label></td>
-					<td><input type="text" id="home_num" name="home phone number" placeholder="home phone number eg. +1 403 123 4567" /></td>
+					<td><input type="text" id="home_num" name="home phone number" placeholder="eg. +1 403 123 4567" /></td>
 				</tr>
 				<tr>
 					<td><label for="busi_num">Business phone number:</label></td>
-					<td><input type="text" id="busi_num" name="business phone number" placeholder="business phone number eg. +1 403 123 4567" /></td>
+					<td><input type="text" id="busi_num" name="business phone number" placeholder="eg. +1 403 123 4567" /></td>
 				</tr>
 				<tr>
 					<td><label for="user_name">User name:</label></td>
