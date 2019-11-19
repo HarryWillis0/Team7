@@ -1,16 +1,15 @@
 /**
- * validation.js
- * A script for validating customer data information entered on register.html webpage
- * 
- * Author: Harry Willis
- * Date modified: 11/16/19
+ * travel_scripts.js
+ * An external script file for Project 1 of the OOSD program at SAIT
  */
 
 /**
  * validate()
- * @param none
- * @return true if data is valid
- *         false if data is invalid
+ * A function to validate the info entered on the registration webpage
+ * @return confirm if data is valid
+ *         false if data is invalid (empty field or malformed Canadian postal code ) 
+ * 
+ * Author: Harry Willis
  */
 function validate() {
     var formData = document.forms[0];
@@ -39,4 +38,26 @@ function validate() {
     }
 
     return confirm("Do you want to continue registering?");
+}
+
+/**
+ * showDesc()
+ * A function to make the discription of a field in registration form visible
+ * @param idToShow - input id of which we show the description for 
+ * 
+ * Author: Harry Willis
+ */
+function showDesc(idToShow) {
+    document.getElementById(idToShow).style.visibility = "visible";
+}
+
+/**
+ * hideDesc()
+ * A function to make the discription of a field in registration form hidden
+ * @param idToHide - input id of which we hide the description for 
+ * 
+ * Author: Harry Willis
+ */
+function hideDesc(idToHide) {
+    document.getElementById(idToHide).style.visibility = "hidden";
 }
