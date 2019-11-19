@@ -6,7 +6,14 @@
 <html>
 	<head>
 		<title>Register</title>
-		<script type="text/javascript" src="scripts/validation.js"> </script>
+		<script type="text/javascript" src="scripts/travel_scripts.js"> </script>
+		
+		<!-- some styling that will eventually be moved to stylesheet.css -->
+		<style>
+			.dataDesc {
+				font-size: small;
+			}
+		</style>
 	</head>
 	<body>
 		<table>
@@ -14,48 +21,59 @@
 			<form id="custReg" action="bouncer.php" method="POST" target="_blank">
 				<tr>
 					<!-- data for customer to enter -->
-					<td><label for="f_name">Full Name:</label></td>
-					<td><input type="text" id="f_name" name="full name" placeholder="full name" /></td>
+					<td><label for="fName">Full Name:</label></td>
+					<td><input type="text" id="fName" name="full name" placeholder="full name" onfocus="showDesc('nameDesc')" onblur="hideDesc('nameDesc')" /></td>
+					<td class="dataDesc" id="nameDesc" style="visibility: hidden;">Your full name <br />eg. John Smith</td>
 				</tr>
 				<tr>
 					<td><label for="addr">Address:</label></td>
-					<td><input type="text" id="addr" name="address line 1" placeholder="suite #, street/ave address" /></td>
+					<td><input type="text" id="addr" name="address" placeholder="address" onfocus="showDesc('addrDesc')" onblur="hideDesc('addrDesc')" /></td>
+					<td class="dataDesc" id="addrDesc" style="visibility: hidden;">The address of your mailing address<br />eg. #123, 4500 56 St. S.W.</td>
 				</tr>
 				<tr>
 					<td><label for="city">City:</label></td>
-					<td><input type="text" id="city" name="city" placeholder="city" /></td>
+					<td><input type="text" id="city" name="city" placeholder="city" onfocus="showDesc('cityDesc')" onblur="hideDesc('cityDesc')" /></td>
+					<td class="dataDesc" id="cityDesc" style="visibility: hidden;">The city of your mailing address<br />eg. Calgary</td>
 				</tr>
 				<tr>
 					<td><label for="prov">Province:</label></td>
-					<td><input type="text" id="prov" name="province" placeholder="province abbreviation eg. AB" /></td>
+					<td><input type="text" id="prov" name="province" placeholder="province" onfocus="showDesc('provDesc')" onblur="hideDesc('provDesc')" /></td>
+					<td class="dataDesc" id="provDesc" style="visibility: hidden;">The province of your mailing address<br />eg. Alberta</td>
 				</tr>
 				<tr>
 					<td><lavel for="postal">Postal code:</lavel></td>
-					<td><input type="text" id="postal" name="postal code" placeholder="postal code" /></td>
+					<td><input type="text" id="postal" name="postal code" placeholder="postal code" onfocus="showDesc('postDesc')" onblur="hideDesc('postDesc')" /></td>
+					<td class="dataDesc" id="postDesc" style="visibility: hidden;">Your mailing address' postal code<br />eg. T1A0Z3</td>
 				</tr>
 				<tr>
 					<td><label for="country">Country:</label></td>
-					<td><input type="text" id="country" name="country" placeholder="country" /></td>
+					<td><input type="text" id="country" name="country" placeholder="country" onfocus="showDesc('countryDesc')" onblur="hideDesc('countryDesc')" /></td>
+					<td class="dataDesc" id="countryDesc" style="visibility: hidden;">Your country of residence<br />eg. Canada</td>
 				</tr>
 				<tr>
 					<td><label for="email">Email:</label></td>
-					<td><input type="text" id="email" name="email" placeholder="eg. johnsmith@example.com" /></td>
+					<td><input type="text" id="email" name="email" placeholder="email" onfocus="showDesc('emailDesc')" onblur="hideDesc('emailDesc')" /></td>
+					<td class="dataDesc" id="emailDesc" style="visibility: hidden;">Your email<br />eg. johnsmith@example.com</td>
 				</tr>
 				<tr>
-					<td><label for="home_num">Home phone number:</label></td>
-					<td><input type="text" id="home_num" name="home phone number" placeholder="eg. +1 403 123 4567" /></td>
+					<td><label for="homeNum">Home phone number:</label></td>
+					<td><input type="text" id="homeNum" name="home phone number" placeholder="home phone #" onfocus="showDesc('homeDesc')" onblur="hideDesc('homeDesc')" /></td>
+					<td class="dataDesc" id="homeDesc" style="visibility: hidden;">Your home phone number<br />eg. +1 403 123 4567</td>
 				</tr>
 				<tr>
-					<td><label for="busi_num">Business phone number:</label></td>
-					<td><input type="text" id="busi_num" name="business phone number" placeholder="eg. +1 403 123 4567" /></td>
+					<td><label for="busiNum">Business phone number:</label></td>
+					<td><input type="text" id="busiNnum" name="business phone number" placeholder="business phone #" onfocus="showDesc('busiDesc')" onblur="hideDesc('busiDesc')" /></td>
+					<td class="dataDesc" id="busiDesc" style="visibility: hidden;">Your business phone number<br />eg. +1 403 123 4567</td>
 				</tr>
 				<tr>
-					<td><label for="user_name">User name:</label></td>
-					<td><input type="text" id="user_name" name="user name" placeholder="desired username" /></td>
+					<td><label for="userName">User name:</label></td>
+					<td><input type="text" id="userName" name="user name" placeholder="username" onfocus="showDesc('userDesc')" onblur="hideDesc('userDesc')" /></td>
+					<td class="dataDesc" id="userDesc" style="visibility: hidden;">Your desired username<br />eg. TravelExperts</td>
 				</tr>
 				<tr>
 					<td><label for="pass">Password:</label></td>
-					<td><input type="password" id="pass" name="password" /></td>
+					<td><input type="password" id="pass" name="password" onfocus="showDesc('passDesc')" onblur="hideDesc('passDesc')" /></td>
+					<td class="dataDesc" id="passDesc" style="visibility: hidden;">Your desired password, not your birthday!<br />eg. travelWithUS881</td>
 				</tr>
 				<tr>
 					<!-- register / reset buttons-->
