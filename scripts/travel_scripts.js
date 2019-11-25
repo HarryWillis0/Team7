@@ -7,7 +7,7 @@
  * validate()
  * A function to validate the info entered on the registration webpage
  * @return confirm if data is valid
- *         false if data is invalid (empty field or malformed Canadian postal code ) 
+ *         false if data is invalid (empty field or malformed Canadian postal code) 
  * 
  * Author: Harry Willis
  */
