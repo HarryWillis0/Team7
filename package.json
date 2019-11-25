@@ -1,0 +1,22 @@
+{
+  "name": "team7",
+  "version": "1.0.0",
+  "description": "OOSD program project 1 - Team 7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarryWillis0/Team7.git"
+  },
+  "author": "Evan, Joe, & Harry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HarryWillis0/Team7/issues"
+  },
+  "homepage": "https://github.com/HarryWillis0/Team7#readme",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  }
+}
