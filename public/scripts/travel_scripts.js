@@ -23,7 +23,7 @@ function validate() {
         if (formData.elements[i].type == "text" || formData.elements[i].type == "password") {
             /* test for empty field */
             if (formData.elements[i].value == "") {
-                errorMsg += formData.elements[i].name + " must have a value<br />";
+                errorMsg += formData.elements[i].placeholder + " must have a value<br />";
             } 
         }
     }
