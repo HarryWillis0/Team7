@@ -6,6 +6,7 @@
  */
 const express = require("express");
 const app = express();
+const inDB = require("./public/scripts/insert_db");
 
 /* serve css/js/image files */
 app.use(express.static("public"));
@@ -25,6 +26,15 @@ app.get("/contact.html", (req, res) => {
 /* serve register page */
 app.get("/register.html", (req, res) => {
     res.sendFile(__dirname + "/views/register.html");
+});
+
+/* serve post action from form on register.html */
+app.post("/sendData", (req, res) => {
+    /* insert new customer into database */
+    inDB.insToDB(req.body);
+
+    /* serve a thank you page */
+    res.sendFile(__dirname + "/views/thanks.html");
 });
 
 /* serve vacation page */
