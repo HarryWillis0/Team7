@@ -10,7 +10,7 @@ const app = express();
 /* serve css/js/image files */
 app.use(express.static("public"));
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 /* serve home page */
 app.get("/", (req, res) => {
@@ -42,3 +42,5 @@ app.listen(8000, (err) => {
     if (err) throw err;
     console.log("Listening on port 8000...");
 });
+
+var db = require('./public/scripts/DBConnect');
