@@ -2,8 +2,9 @@
  * Author: Harry Willis
 -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8" />
 		<title>registration</title>
 		<script type="text/javascript" src="../scripts/travel_scripts.js"> </script>
 		
@@ -105,7 +106,7 @@
 
 			<label for="pass">Password:</label><br />
 			<input class="formInput" type="password" id="pass" name="password" onfocus="showDesc('passDesc')" onblur="hideDesc('passDesc')" />
-			<p class="dataDesc" id="passDesc" style="visibility: hidden;">Your desired password, not your birthday! eg. travelWithUS881</p>
+			<p class="dataDesc" id="passDesc" name="password" style="visibility: hidden;">Your desired password, not your birthday! eg. travelWithUS881</p>
 			<br />
 
 			<!-- register / reset buttons-->

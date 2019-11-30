@@ -6,12 +6,15 @@
  */
 const express = require("express");
 const app = express();
-const inDB = require("./public/scripts/insert_db");
+const path = require("path");
+const inCust = require("./public/scripts/insert_cust");
 
 /* serve css/js/image files */
 app.use(express.static("public"));
 
 app.use(express.urlencoded({extended: true}));
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
 
 /* serve home page */
 app.get("/", (req, res) => {
@@ -31,10 +34,10 @@ app.get("/register.html", (req, res) => {
 /* serve post action from form on register.html */
 app.post("/sendData", (req, res) => {
     /* insert new customer into database */
-    inDB.insToDB(req.body);
-
-    /* serve a thank you page */
-    res.sendFile(__dirname + "/views/thanks.html");
+    inCust.insertCust(req.body);
+    
+    /* serve a personalized thank you page */
+    res.render('thanks', {greeting: req.body.firstname});
 });
 
 /* serve vacation page */
