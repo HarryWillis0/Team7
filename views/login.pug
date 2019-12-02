@@ -1,0 +1,18 @@
+doctype html
+//
+  A login webpage for a travel agency's website
+  * Author: Harry Willis
+head
+    meta(charset='UTF-8')
+    title Login
+form(action='/login' method='POST')
+    label(for='username') Username:
+    br
+    input#userName(style='display: block;' type='text' name='userName' placeholder='username')
+    br
+    label(for='password') Password
+    br
+    input#password(style='display: block;' type='password' name='password' placeholder='password')
+    br
+    input(style='display: block;' type='submit' value='Login')
+p #{errLogin}

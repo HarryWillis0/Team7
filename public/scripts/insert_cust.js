@@ -9,7 +9,7 @@ const bcrypt = require("bcryptjs");
 const salt = bcrypt.genSaltSync(10);
 
 module.exports = {
-    insertCust: function(body){
+    insertCust: function(body, conn){
         /* this may need to change, not sure if this is how we want to do it */
         var conn = mysql.createConnection({
             host: "localhost",
