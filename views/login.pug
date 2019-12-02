@@ -4,15 +4,20 @@ doctype html
   * Author: Harry Willis
 head
     meta(charset='UTF-8')
+    script(type='text/javascript' src='../scripts/travel_scripts.js')
     title Login
 form(action='/login' method='POST')
     label(for='username') Username:
     br
-    input#userName(style='display: block;' type='text' name='userName' placeholder='username')
+    input#userName(style='display: inline-block;' type='text' name='userName' placeholder='username' onfocus='showDesc(\'userDesc\')' onblur='hideDesc(\'userDesc\')')
+    p#userDesc.dataDesc(style='visibility: hidden; display: inline-block; font-size: small;') The email you used to register
     br
+    
     label(for='password') Password
     br
-    input#password(style='display: block;' type='password' name='password' placeholder='password')
+    input#password(style='display: inline-block;' type='password' name='password' placeholder='password' onfocus='showDesc(\'passDesc\')' onblur='hideDesc(\'passDesc\')')
+    p#passDesc.dataDesc(style='visibility: hidden; display: inline-block; font-size: small') The password you created to register
     br
+
     input(style='display: block;' type='submit' value='Login')
 p #{errLogin}
