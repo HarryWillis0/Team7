@@ -12,9 +12,13 @@ const inCust = require("./public/scripts/insert_cust");
 /* serve css/js/image files */
 app.use(express.static("public"));
 
+<<<<<<< HEAD
 app.use(express.urlencoded({extended: true}));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
+=======
+app.use(express.urlencoded({ extended: true }));
+>>>>>>> evan
 
 /* serve home page */
 app.get("/", (req, res) => {
@@ -65,3 +69,5 @@ app.listen(8000, (err) => {
     if (err) throw err;
     console.log("Listening on port 8000...");
 });
+
+var db = require('./public/scripts/DBConnect');
