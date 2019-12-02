@@ -1,0 +1,89 @@
+<!-- An account registration webpage for a travel agency's website 
+ * Author: Harry Willis
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="../scripts/travel_scripts.js"></script>
+        <title>Booking</title>
+    </head>
+    <body>
+        <form action="/booking" method="POST">
+            
+            <!-- booking info -->
+            <label for="package">Choose your package:</label>
+            <select>
+                <option value="default">Choose one</option>
+                <option value="carrNewYr">Carribean New Year</option>
+                <option value="polyPar">Polynesian Paradise</option>
+                <option value="asianExp">Asian Expedition</option>
+                <option value="euroVac">European Vacation</option>
+            </select> 
+            <br />
+
+            <!-- is customer registered -->
+            <label for="userEmail">Enter your email if you have one:</label>
+            <input type="text" name="userEmail" placeholder="email" /><br />
+
+            <input type="submit" value="Book" />
+            
+			<!-- data for customer to enter 
+			<label class="label" for="fName">First Name:</label><br />
+			<input style="display: inline-block;" class="formInput" type="text" id="fName" name="firstname" placeholder="first name" onfocus="showDesc('fNameDesc')" onblur="hideDesc('fNameDesc')" />
+			<p class="dataDesc" id="fNameDesc" style="visibility: hidden; display:inline-block;">Your first name eg. John</p>
+			<br />
+			
+			<label class="label" for="lName">Last Name:</label><br />
+			<input style="display: inline-block;" class="formInput" type="text" id="lName" name="lastname" placeholder="last name" onfocus="showDesc('lNameDesc')" onblur="hideDesc('lNameDesc')" />
+			<p class="dataDesc" id="lNameDesc" style="visibility: hidden; display:inline-block;">Your last name eg. Smith</p>
+			<br />
+
+			<label for="addr">Address:</label><br />
+			<input style="display: inline-block;" class="formInput" type="text" id="addr" name="address" placeholder="address" onfocus="showDesc('addrDesc')" onblur="hideDesc('addrDesc')" />
+			<p class="dataDesc" id="addrDesc" style="visibility: hidden; display:inline-block;">The address of your mailing address eg. #123, 4500 56 St. S.W.</p>
+			<br />
+
+			<label for="city">City:</label><br />
+			<input style="display: inline-block;" class="formInput" type="text" id="city" name="city" placeholder="city" onfocus="showDesc('cityDesc')" onblur="hideDesc('cityDesc')" />
+			<p class="dataDesc" id="cityDesc" style="visibility: hidden; display:inline-block;">The city of your mailing address eg. Calgary</p>
+			<br />
+
+			<label for="prov">Province:</label><br />
+			<input style="display: inline-block;" class="formInput" type="text" id="prov" name="province" placeholder="province" onfocus="showDesc('provDesc')" onblur="hideDesc('provDesc')" />
+			<p class="dataDesc" id="provDesc" style="visibility: hidden; display:inline-block;">The province of your mailing address eg. Alberta</p>
+			<br />
+
+			<label for="postal">Postal code:</label><br />
+			<input style="display: inline-block;" class="formInput" type="text" id="postal" name="postalCode" placeholder="postal code" onfocus="showDesc('postDesc')" onblur="hideDesc('postDesc')" />
+			<p class="dataDesc" id="postDesc" style="visibility: hidden; display:inline-block;">Your mailing address' postal code eg. T1A0Z3</p>
+			<br />
+
+			<label for="country">Country:</label><br />
+			<input style="display: inline-block;" class="formInput" type="text" id="country" name="country" placeholder="country" onfocus="showDesc('countryDesc')" onblur="hideDesc('countryDesc')" />
+			<p class="dataDesc" id="countryDesc" style="visibility: hidden; display:inline-block;">Your country of residence eg. Canada</p>
+			<br />
+
+			<label for="email">Email:</label><br />
+			<input style="display: inline-block;" class="formInput" type="text" id="email" name="email" placeholder="email" onfocus="showDesc('emailDesc')" onblur="hideDesc('emailDesc')" />
+			<p class="dataDesc" id="emailDesc" style="visibility: hidden; display:inline-block;">Your email eg. johnsmith@example.com</p>
+			<br />
+
+			<label for="homeNum">Home phone number:</label><br />
+			<input style="display: inline-block;" class="formInput" type="text" id="homeNum" name="homeNum" placeholder="home phone #" onfocus="showDesc('homeDesc')" onblur="hideDesc('homeDesc')" />
+			<p class="dataDesc" id="homeDesc" style="visibility: hidden; display:inline-block;">Your home phone number eg. 4035555555</p>
+			<br />
+
+			<label for="busiNum">Business phone number:</label><br />
+			<input style="display: inline-block;" class="formInput" type="text" id="busiNnum" name="busNum" placeholder="business phone #" onfocus="showDesc('busiDesc')" onblur="hideDesc('busiDesc')" />
+			<p class="dataDesc" id="busiDesc" style="visibility: hidden; display:inline-block;">Your business phone number eg. 4035555555</p>
+			<br />
+
+			<label for="pass">Password:</label><br />
+			<input style="display: inline-block;" class="formInput" type="password" id="pass" name="password" onfocus="showDesc('passDesc')" onblur="hideDesc('passDesc')" />
+			<p class="dataDesc" id="passDesc" name="password" style="visibility: hidden; display:inline-block;">Your desired password, not your birthday! eg. travelWithUS881</p>
+            <br />-->
+        </form>
+    </body>
+</html>

@@ -65,10 +65,15 @@ app.post("/login", (req, res) => {
     });
 });
 
+/* serve bookings page */
+app.get("/bookings.html", (req, res) => {
+    res.sendFile(__dirname + "/views/bookings.html");
+});
+
 /* serve any other requests to 404 page */
-//app.use((req, res) => {
-  //  res.sendFile(__dirname + "/views/404.html");
-//});
+app.use((req, res) => {
+    res.sendFile(__dirname + "/views/404.html");
+});
 
 /* set up server on port 8000 */
 app.listen(8000, (err) => {
