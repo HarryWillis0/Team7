@@ -45,6 +45,16 @@ app.get("/vacation.html", (req, res) => {
     res.sendFile(__dirname + "/views/vacation.html");
 });
 
+/* serve login page */
+app.get("/login.html", (req, res) => {
+    res.sendFile(__dirname + "/views/login.html");
+});
+
+/* serve login post */
+app.post("/login", (req, res) => {
+        
+});
+
 /* serve any other requests to 404 page */
 app.use((req, res) => {
     res.sendFile(__dirname + "/views/404.html");

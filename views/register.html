@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>registration</title>
-		<script type="text/javascript" src="../scripts/travel_scripts.js"> </script>
+		<script type="text/javascript" src="../scripts/travel_scripts.js"></script>
 		
 		<!-- some styling that will eventually be moved to stylesheet.css -->
 		<style>
@@ -99,11 +99,6 @@
 			<p class="dataDesc" id="busiDesc" style="visibility: hidden;">Your business phone number eg. 4035555555</p>
 			<br />
 
-			<label for="userName">User name:</label><br />
-			<input class="formInput" type="text" id="userName" name="userName" placeholder="username" onfocus="showDesc('userDesc')" onblur="hideDesc('userDesc')" />
-			<p class="dataDesc" id="userDesc" style="visibility: hidden;">Your desired username eg. TravelExperts</p>
-			<br />
-
 			<label for="pass">Password:</label><br />
 			<input class="formInput" type="password" id="pass" name="password" onfocus="showDesc('passDesc')" onblur="hideDesc('passDesc')" />
 			<p class="dataDesc" id="passDesc" name="password" style="visibility: hidden;">Your desired password, not your birthday! eg. travelWithUS881</p>
@@ -113,6 +108,7 @@
 			<input type="submit" value="Register" onclick="return validate()" />
 			<input type="reset" onclick="confirm('Are you sure you want to reset the form?')"/>
 		</form>
+		<p>Already registered?<button><a href="login.html">Login</a></button></p>
 
 		<!-- missing data fields error message -->
 		<p id="dataMiss"></p>
