@@ -16,7 +16,7 @@ const inBk = require("./public/scripts/insert_booking");
 /* serve css/js/image files */
 app.use(express.static("public"));
 
-/*  */
+/* parse incoming requests */
 app.use(express.urlencoded({extended: true}));
 
 /* tell express where to look for pug files */
@@ -108,5 +108,3 @@ app.listen(8000, (err) => {
     if (err) throw err;
     console.log("Listening on port 8000...");
 });
-
-var db = require('./public/scripts/DBConnect');
