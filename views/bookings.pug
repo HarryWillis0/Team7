@@ -1,0 +1,49 @@
+doctype html
+//
+  A booking webpage for a travel agency's website
+  * Author: Harry Willis
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    script(type='text/javascript' src='../scripts/travel_scripts.js')
+    title Booking
+form(action='/book' method='POST')
+    // booking info
+    label(for='pkgOpt') Choose your package:
+    select.pkgOpt(name='pkgOpt' style='display: block;')
+        option(value='default') Choose one
+        option(value='carrNewYr') Carribean New Year
+        option(value='polyPar') Polynesian Paradise
+        option(value='asianExp') Asian Expedition
+        option(value='euroVac') European Vacation
+    br
+
+    label(for='numTrav') How many of travellers?
+    select.numTrav(name='numTrav' style='display:block;')
+        option(value='default') Choose one
+        option(value='one') 1
+        option(value='two') 2
+        option(value='three') 3
+        option(value='four') 4
+    br
+    
+    label(for='tripType') What&apos;s the purpose of your trip?
+    select.tripType(name='tripType' style='display:block;')
+        option(value='default') Choose one
+        option(value='B') Business
+        option(value='G') Group
+        option(value='L') Leisure
+    br
+    
+    // is customer registered
+    label(for='userFName') Enter your first and last name if you have registered with us before:
+    br
+    
+    input(style='display: block;' type='text' name='userFName' placeholder='first name')
+    br
+    
+    input(style='display: block;' type='text' name='userLName' placeholder='last name')
+    br
+    
+    input(style='display: block;' type='submit' value='Book')
+p #{errFind}
