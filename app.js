@@ -9,7 +9,7 @@ const app = express();
 const path = require("path");
 const inCust = require("./public/scripts/insert_cust");
 const conn = require("./public/scripts/DBConnect");
-const verify = require("./public/scripts/loginValidate");
+const verify = require("./public/scripts/login_validate");
 const getCustId = require("./public/scripts/get_cust_id");
 const inBk = require("./public/scripts/insert_booking");
 
