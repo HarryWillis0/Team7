@@ -1,6 +1,6 @@
 /**
  * get_cust_id.js
- * a module to insert a new booking into travel experts database
+ * a module to insert a new booking into travelexperts database
  * 
  * Author: Harry Willis
  */
