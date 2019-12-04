@@ -46,17 +46,17 @@ app.get("/", (req, res) => {
 });
 
 /* serve contact page */
-app.get("/contact.html", (req, res) => {
+app.get("/contact", (req, res) => {
     sess = req.session;
 
-    res.sendFile(__dirname + "/views/contact.html");
+    res.render(__dirname + "/views/contact");
 });
 
 /* serve register page */
-app.get("/register.html", (req, res) => {
+app.get("/register", (req, res) => {
     sess = req.session;
 
-    res.sendFile(__dirname + "/views/register.html");
+    res.render(__dirname + "/views/register");
 });
 
 /* serve post action from form on register.html */
@@ -76,10 +76,10 @@ app.post("/sendData", (req, res) => {
 });
 
 /* serve vacation page */
-app.get("/vacation.html", (req, res) => {
+app.get("/vacation", (req, res) => {
     sess = req.session;
 
-    res.sendFile(__dirname + "/views/vacation.html");
+    res.render(__dirname + "/views/vacation.pug");
 });
 
 /* serve login page */
@@ -167,7 +167,7 @@ app.use("/logout", (req, res) => {
 
 /* serve any other requests to 404 page */
 app.use((req, res) => {
-    res.sendFile(__dirname + "/views/404.html");
+    res.render(__dirname + "/views/404");
 });
 
 /* set up server on port 8000 */
