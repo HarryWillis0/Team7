@@ -2,19 +2,6 @@ const express = require("express");
 const mysql= require ('mysql');
 const app = express();
 
-var conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'Joe',
-    password: 'password',
-    database: 'travelexperts'
-});
-
-conn.connect(function(err) {
-    if (err) throw err;
-    console.log("DB Connected!");
-});
-
-
 app.use(express.static("views", {"extensions":["html", "htm"]}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
