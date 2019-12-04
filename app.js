@@ -14,6 +14,7 @@ const path = require('path');
 app.use(express.static('./public'));
 app.use(express.static('./views', { extensions: ["html"] }));
 app.set('view engine', 'pug');
+app.set("views", path.join(__dirname, "views"));
 
 //Imports the Database connection script from DBConnect.js
 var con = require("./public/scripts/DBConnect.js");
@@ -36,8 +37,8 @@ app.get("/register.html", (req, res) => {
 });
 
 /* serve vacation page */
-app.get("/vacation.html", (req, res) => {
-    res.sendFile(__dirname + "/views/vacation.html");
+app.get("/vacation", (req, res) => {
+    res.render(__dirname + "/views/vacation.pug");
 });
 
 //page to run the query, gets called by ajax later.
