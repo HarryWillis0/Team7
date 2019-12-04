@@ -2,7 +2,7 @@
  * app.js
  * handle client requests and serve appropiate pages
  * 
- * Author: Harry Willis
+ * Authors: Harry Willis, Evan Tucker
  */
 const express = require("express");
 const app = express();
@@ -23,7 +23,13 @@ app.use(session({
 var sess;
 
 /* serve css/js/image files */
-app.use(express.static("public"));
+app.use(express.static('./public'));
+app.use(express.static('./views', { extensions: ["html"] }));
+app.set('view engine', 'pug');
+app.set("views", path.join(__dirname, "views"));
+
+//Imports the Database connection script from DBConnect.js
+var con = require("./public/scripts/DBConnect.js");
 
 /* parse incoming requests */
 app.use(express.urlencoded({extended: true}));
@@ -164,6 +170,23 @@ app.use("/logout", (req, res) => {
         res.render("thanks.pug", {greeting: "for visiting " + currFName + ". Hope to see you soon!"});
     })
 });
+
+//page to run the query, gets called by ajax later.
+app.get("/get-packages", (req, res) => {
+    con.query("SELECT * FROM packages WHERE PkgStartDate > date_add(NOW(), INTERVAL -1 MONTH)", function(err, result) {
+        if (err) throw err;
+        //console.log(result);
+        res.send(result);
+
+    });
+})
+app.get("/get-agents", (req, res) => {
+    con.query("SELECT * FROM agents", function(err, result) {
+        if (err) throw err;
+        //console.log(result);
+        res.send(result);
+    })
+})
 
 /* serve any other requests to 404 page */
 app.use((req, res) => {
