@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Expert</title>
+    <script rel="script" type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script>
+        document.getElementById("img1").onclick=function(){
+            window.location.assign("https://google.ca");
+        };
+    </script>
+</head>
+<body>
+    <div class="outer" id="outer">
+        <div>
+            <img src="album/00.png" alt="" id="logo">
+            <p class="header">Travel Experts</p>
+        </div>
+        <div class="Nav">
+            <nav id="nav">
+                <li><a href="/">Travel Experts</a></li>
+                <li><a href="vacations.html">Vacation Package</a></li>
+                <li><a href="register">Register</a></li>
+                <li><a href="contact">Con\tact</a></li>
+            </nav>
+        </div>
+        <div class="leftSide">
+            <ul id="theUl">
+                <li class="current">
+                    <div style="position:relative;">
+                        <img src="album/4.png" id="img1" alt="">
+                        <div id="content1" style=" font-size: 30px; position:absolute; z-index:2; left:10px; top:10px">Amazing Italy 10 days tour.
+                            We Have The Perfect Accommodation For You.</div>
+                    </div>
+                    <a href="https://google.ca">Learn more details</a>
+                </li>
+                <li>
+                    <div style="position:relative;">
+                        <img src="album/5.png" id="img2" alt="">
+                        <div id="content2" style=" font-size: 30px; position:absolute; z-index:2; left:10px; top:10px">mysterious Egypt 10 days tour.
+                            We Have The Perfect Accommodation For You.</div>
+                    </div>
+                    <a href="https://google.ca">Learn more details</a>
+                </li>
+                <li>
+                    <div style="position:relative;">
+                        <img src="album/6.png" id="img3" alt="">
+                        <div id="content3" style=" font-size: 30px; position:absolute; z-index:2; left:10px; top:10px">Fantastic Greek 10 days tour.
+                            We Have The Perfect Accommodation For You.</div>
+                    </div>
+                    <a href="https://google.ca">Learn more details</a>
+                </li>
+            </ul>
+        </div>
+        <div class="inner">
+            <ul id="myUl">
+                <li class="current"><img src="album/3.jpg" alt="" ></li>
+                <li><img src="album/2.jpg" alt="" ></li>
+                <li><img src="album/1.jpg" alt="" ></li>
+            </ul>
+            <ol id="myOl">
+                <li class="current"><img src="album/3.jpg" alt="" ></li>
+                <li><img src="album/2.jpg" alt="" ></li>
+                <li><img src="album/1.jpg" alt="" ></li>
+            </ol>
+        </div>
+    </div>
+
+</body>
+</html>
