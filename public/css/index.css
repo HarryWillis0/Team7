@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style: none;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+#logo {
+    width: 100px;
+    float: left;
+    margin: 20px auto auto 20px;
+}
+div .header{
+    float: left;
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+    font-family: 'Lobster', cursive;
+    color: red;
+    margin: 2% auto auto 1%;
+    font-size: 2.5rem;
+    text-shadow: 5px 5px 3px #fff11f;
+
+}
+div  .Nav {
+    /*float: right;*/
+    margin: 0 100px 10px auto;
+    opacity: 2;
+}
+#nav {
+    font-size: 1.2rem;
+    list-style-type: none;
+    margin-top: 15px;
+    padding-left: 200px;
+    overflow: hidden;
+    line-height: 80px;
+}
+li {
+    float: left;
+}
+.Nav a:link, .Nav a:visited {
+    display: flow;
+    width: 50px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.Nav a:hover, .Nav a:active {
+    background-color: #fff0b6;
+}
+.outer {
+    width: 100%;
+    height: 100%;
+    background: url("../album/3.jpg");
+    background-size: cover; /*背景图片随window大小变化而变化*/
+    overflow: hidden;
+}
+body .leftSide {
+    float: left;
+    width: 20%;
+    height: 50%;
+    /*border: 1px solid black;*/
+    margin-left: 1%;
+    /*opacity: 1;*/
+    transition: all 1000ms ease 300ms;
+    /*background: white;*/
+}
+.leftSide ul {
+    width: 256px;
+    height: 189px;
+    position: relative;
+}
+.leftSide ul li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+}
+.leftSide ul .current {
+    opacity: 1;
+}
+.leftSide li img {
+    width: 350px;
+    height: 350px;
+    opacity: 0.6;
+}
+.leftSide li a {
+    display: flow;
+    width: 50px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.inner {
+    float: right;
+    width: 800px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.6);
+    margin: -1.5% 10% auto auto;
+    padding: 15px; /*周围留透明白*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.inner img {
+    width: 100%; /*100%占满.inner_in*/
+    /*height: 450px;*/
+}
+.inner ul {
+    width: 800px;
+    height: 450px;
+    position: relative;
+}
+.inner ul li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+}
+.inner ul .current {
+    opacity: 1;
+}
+.inner ol {
+    width: 800px;
+    height: 135px;
+    margin-top: 10px;
+}
+.inner ol li {
+    width: 243px;
+    height: 135px;
+    float: left;
+    margin-right: 35px;
+    opacity: 0.5;
+    transition: 1s;
+}
+.inner ol li:last-child {
+    margin-right: 0;
+}
+.inner ol .current {
+    opacity: 1;
+}
