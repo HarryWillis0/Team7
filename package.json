@@ -1,31 +1,21 @@
 {
-  "name": "team7",
+  "name": "web-assignment",
   "version": "1.0.0",
-  "description": "OOSD program project 1 - Team 7",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HarryWillis0/Team7.git"
-  },
-  "author": "Evan, Joe, & Harry",
+  "author": "Joe",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/HarryWillis0/Team7/issues"
-  },
-  "homepage": "https://github.com/HarryWillis0/Team7#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "express": "^4.17.1",
-    "express-session": "^1.17.0",
-    "moment": "^2.24.0",
-    "mysql": "^2.17.1",
-    "pug": "^2.0.4"
-  },
   "devDependencies": {
+    "express": "^4.17.1",
     "nodemon": "^2.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "jquery": "^3.4.1",
+    "mysql": "^2.17.1"
   }
 }
