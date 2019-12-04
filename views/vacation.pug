@@ -11,15 +11,15 @@ table#packagesTable
   tr
 script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
 script.
-  $.ajax({
-  url: './get-packages',
-  context: document.body
-  }).done((result) => {
-  for (i = 0; i < result.length; i++) {
-  document.getElementById('packagesTable').innerHTML += ("<td class='name'>" + result[i]['PkgName'] + "</td> </br>")
-  document.getElementById('packagesTable').innerHTML += ("<td id='startDate'>" + result[i]['PkgStartDate'] + "</td> </br>")
-  document.getElementById('packagesTable').innerHTML += ("<td id='endDate'>" + result[i]['PkgEndDate'] + "</td> </br>")
-  document.getElementById('packagesTable').innerHTML += ("<td id='desc'>" + result[i]['PkgDesc'] + "</td> </br>")
-  document.getElementById('packagesTable').innerHTML += ("<td id='price'> $" + result[i]['PkgBasePrice'] + "<a href='/bookings.html' class='btn btn-default'>Book Now</a></td> </br>")
-  }
+    $.ajax({
+    url: './get-packages',
+    context: document.body
+    }).done((result) => {
+      for (i = 0; i < result.length; i++) {
+        document.getElementById('packagesTable').innerHTML += ("<td class='name'>" + result[i]['PkgName'] + "</td> </br>")
+        document.getElementById('packagesTable').innerHTML += ("<td id='startDate'>" + result[i]['PkgStartDate'] + "</td> </br>")
+        document.getElementById('packagesTable').innerHTML += ("<td id='endDate'>" + result[i]['PkgEndDate'] + "</td> </br>")
+        document.getElementById('packagesTable').innerHTML += ("<td id='desc'>" + result[i]['PkgDesc'] + "</td> </br>")
+        document.getElementById('packagesTable').innerHTML += ("<td id='price'> $" + result[i]['PkgBasePrice'] + "<a href='/bookings.html' class='btn btn-default'>Book Now</a></td> </br>")
+      }
   });
