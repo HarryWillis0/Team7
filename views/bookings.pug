@@ -13,27 +13,26 @@ head
 
     title Booking
 
-#outer
-  div
-    img#logo(src='album/00.png' alt='')
-    p.header Travel Experts
-  .Nav
-    nav#nav
-      li
-        a(href='/') Travel Experts
-      li
-        a(href='vacation') Vacation Package
-      li
-        a(href='register') Register
-      li
-        a(href='contact') Contact
-      li
-        a(href='logout' style='visibility: #{showOut}') #{logOut}
+    div
+        img#logo(src='album/00.png' alt='')
+        p.header Book a Package
+    .Nav
+        nav#nav
+            li
+                a(href='/') Travel Experts
+            li
+                a(href='vacation') Vacation Package
+            li
+                a(href='register') Register
+            li
+                a(href='contact') Contact
+            li
+                a(href='logout' style='visibility: #{showOut}') #{logOut}
 
 div#bookForm
     form#book(action='/book' method='POST')
         // booking info
-        label(for='pkgOpt') Choose your package:
+        label(for='pkgOpt') Choose your package: *
         select.pkgOpt(name='pkgOpt')
             option(value='default') Choose one
             option(value='carrNewYr') Carribean New Year
@@ -42,7 +41,7 @@ div#bookForm
             option(value='euroVac') European Vacation
         br
 
-        label(for='numTrav') How many of travellers?
+        label(for='numTrav') How many of travellers? *
         select.numTrav(name='numTrav' style='display:block;')
             option(value='default') Choose one
             option(value='one') 1
@@ -51,7 +50,7 @@ div#bookForm
             option(value='four') 4
         br
         
-        label(for='tripType') What&apos;s the purpose of your trip?
+        label(for='tripType') What&apos;s the purpose of your trip? *
         select.tripType(name='tripType' style='display:block;')
             option(value='default') Choose one
             option(value='B') Business

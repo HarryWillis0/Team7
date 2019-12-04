@@ -122,12 +122,13 @@ app.post("/login", (req, result) => {
                 sess.firstName = res[0].CustFirstName;
                 sess.lastName = res[0].CustLastName;
                 sess.email = req.body.userName;
-
+                
                 /* username and password matched, send home */
                 result.render("index", { logOut: "Logout", bookIfIn: "Book now!" });
             });
         } else {
-            result.render("login.pug", { errLogin: "Sorry we couldn't find you..." });
+            console.log("here");
+            result.render("login", { errLogin: "Sorry we couldn't find you..." });
         }
     });
 });
@@ -138,7 +139,7 @@ app.get("/bookings", (req, res) => {
 
     /* serve different options on page depending if user logged in */
     if (sess.firstName) {
-        res.render(__dirname + "/views/bookings.pug", {loggedIn: "Book a trip now!", logOut: "Logout"});
+        res.render(__dirname + "/views/bookings.pug", {loggedIn: "Book your trip!", logOut: "Logout"});
     } else {
         res.render("login", { needInToBook: "Sorry you must login before booking." });
     }

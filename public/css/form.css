@@ -6,11 +6,13 @@
 body {
     background: url("../album/goodbyeNeon.jpg");
     background-color: #969696;
+    font-family: "Helvetica Neue", Helvetica, Arial;
 }
 input[type="text"], input[type="password"] {
     width: 50%;
     height: 40px;
     border-radius: 5px;
+    display: inline-block;
 }
 .dataDesc {
     display: inline-block;
@@ -22,16 +24,20 @@ input[type="text"], input[type="password"] {
 }
 #dataMiss {
     position: fixed;
-    top: 50px;
+    top: 100px;
     left: 50%;
     text-align: center;
     font-weight: bold;
 }
 #custReg {
     position: relative;
-    padding-top: 150px;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 15px;
     padding-right: 15px;
+    width: 750px;
+    height: 700px;
 }
 #book{
     position: relative;
@@ -87,10 +93,35 @@ select {
     width: 100px;
 }
 #seeYou {
+    text-align: center;
     position: fixed;
     margin-top: 100px;
     margin-left: 20px;
 }
-/*#byeImg {
+#logIn {
+    position: relative;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 750px;
+    height: 200px;
+}
 
-}*/
+#login > input[type="text"], input[type="password"] {
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    display: block;
+}
+
+#regBtn {
+    border-radius: 4px;
+    background-color: #d35400;
+    border: none;
+    padding: 10px;
+    width: 100px;
+    margin-left: 25px;
+    text-decoration: none;
+}

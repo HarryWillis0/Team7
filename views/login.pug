@@ -9,25 +9,45 @@ head
     script(type='text/javascript' src='../scripts/travel_scripts.js')
     
     link(rel='stylesheet' type='text/css' href='css/index.css')
+    link(rel='stylesheet' type='text/css' href='css/form.css')
     
     title Login
-p #{needInToBook}
-form(action='/login' method='POST')
-    label(for='username') Username:
-    br
-    input#userName(style='display: inline-block;' type='text' name='userName' placeholder='username' onfocus='showDesc(\'userDesc\')' onblur='hideDesc(\'userDesc\')')
-    p#userDesc.dataDesc(style='visibility: hidden; display: inline-block; font-size: small;') The email you used to register
-    br
     
-    label(for='password') Password
-    br
-    input#password(style='display: inline-block;' type='password' name='password' placeholder='password' onfocus='showDesc(\'passDesc\')' onblur='hideDesc(\'passDesc\')')
-    p#passDesc.dataDesc(style='visibility: hidden; display: inline-block; font-size: small') The password you created to register
-    br
+    //- heading and nav bar (Author: Joe Yang)
+    div
+        img#logo(src='album/00.png' alt='')
+        p.header Login
+    .Nav
+        nav#nav
+            li
+                a(href='/') Travel Experts
+            li
+                a(href='vacation') Vacation Package
+            li
+                a(href='register') Register
+            li
+                a(href='contact') Contact
+            li 
+                a(href='bookings') Book Now
 
-    input(style='display: block;' type='submit' value='Login')
-    p OR
-button
-  a(href='register' style='text-decoration: none;') Register
+p(style='margin-top: 75px; margin-left: 15px;') #{needInToBook}
+div#logIn
+    form(action='/login' method='POST')
+        label(for='username') Username:
+        br
+        input#userName(style='display: inline-block;' type='text' name='userName' placeholder='username' onfocus='showDesc(\'userDesc\')' onblur='hideDesc(\'userDesc\')')
+        p#userDesc.dataDesc(style='visibility: hidden; display: inline-block; font-size: small;') The email you used to register
+        br
+        
+        label(for='password') Password
+        br
+        input#password(style='display: inline-block;' type='password' name='password' placeholder='password' onfocus='showDesc(\'passDesc\')' onblur='hideDesc(\'passDesc\')')
+        p#passDesc.dataDesc(style='visibility: hidden; display: inline-block; font-size: small') The password you created to register
+        br
 
-p #{errLogin}
+        input(style='display: block;' type='submit' value='Login')
+        p(style='margin-left: 60px; margin-top: 5px; margin-bottom: 5px;') OR
+        button#regBtn
+            a(href='register' style='text-decoration: none;') Register
+
+p(style='margin-top: 10px;') #{errLogin}

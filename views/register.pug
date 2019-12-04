@@ -13,99 +13,99 @@ head
     
     title Registration
 
-//- heading and nav bar (Author: Joe Yang)
-#outer
+    //- heading and nav bar (Author: Joe Yang)
     div
         img#logo(src='album/00.png' alt='')
         p.header Registration
     .Nav
         nav#nav
-        li
-            a(href='/') Travel Experts
-        li
-            a(href='vacation') Vacation Package
-        li
-            a(href='register') Register
-        li
-            a(href='contact') Contact
-        li 
-            a(href='bookings') Book Now
+            li
+                a(href='/') Travel Experts
+            li
+                a(href='vacation') Vacation Package
+            li
+                a(href='register') Register
+            li
+                a(href='contact') Contact
+            li 
+                a(href='bookings') Book Now
 div#regFrom
     form#custReg(action='/sendData' method='POST')
         // data for customer to enter
-        label.label(for='fName') First Name:
+        label.label(for='fName') First Name: *
         br
         input#fName.formInput(type='text' name='firstname' placeholder='first name' onfocus="showDesc('fNameDesc')" onblur="hideDesc('fNameDesc')")
         p#fNameDesc.dataDesc(style='visibility: hidden;') Your first name eg. John
         br
         
-        label.label(for='lName') Last Name:
+        label.label(for='lName') Last Name: *
         br
         input#lName.formInput(type='text' name='lastname' placeholder='last name' onfocus="showDesc('lNameDesc')" onblur="hideDesc('lNameDesc')")
         p#lNameDesc.dataDesc(style='visibility: hidden;') Your last name eg. Smith
         br
         
-        label(for='addr') Address:
+        label(for='addr') Address: *
         br
         input#addr.formInput(type='text' name='address' placeholder='address' onfocus="showDesc('addrDesc')" onblur="hideDesc('addrDesc')")
         p#addrDesc.dataDesc(style='visibility: hidden;') The address of your mailing address eg. #123, 4500 56 St. S.W.
         br
         
-        label(for='city') City:
+        label(for='city') City: *
         br
         input#city.formInput(type='text' name='city' placeholder='city' onfocus="showDesc('cityDesc')" onblur="hideDesc('cityDesc')")
         p#cityDesc.dataDesc(style='visibility: hidden;') The city of your mailing address eg. Calgary
         br
         
-        label(for='prov') Province:
+        label(for='prov') Province: *
         br
         input#prov.formInput(type='text' name='province' placeholder='province' onfocus="showDesc('provDesc')" onblur="hideDesc('provDesc')")
         p#provDesc.dataDesc(style='visibility: hidden;') The province of your mailing address eg. Alberta
         br
         
-        label(for='postal') Postal code:
+        label(for='postal') Postal code: *
         br
         input#postal.formInput(type='text' name='postalCode' placeholder='postal code' onfocus="showDesc('postDesc')" onblur="hideDesc('postDesc')")
         p#postDesc.dataDesc(style='visibility: hidden;') Your mailing address&apos; postal code eg. T1A0Z3
         br
         
-        label(for='country') Country:
+        label(for='country') Country: *
         br
         input#country.formInput(type='text' name='country' placeholder='country' onfocus="showDesc('countryDesc')" onblur="hideDesc('countryDesc')")
         p#countryDesc.dataDesc(style='visibility: hidden;') Your country of residence eg. Canada
         br
         
-        label(for='email') Email:
+        label(for='email') Email: *
         br
         input#email.formInput(type='text' name='email' placeholder='email' onfocus="showDesc('emailDesc')" onblur="hideDesc('emailDesc')")
         p#emailDesc.dataDesc(style='visibility: hidden;') Your email eg. johnsmith@example.com
         br
         
-        label(for='homeNum') Home phone number:
+        label(for='homeNum') Home phone number: *
         br
         input#homeNum.formInput(type='text' name='homeNum' placeholder='home phone #' onfocus="showDesc('homeDesc')" onblur="hideDesc('homeDesc')")
         p#homeDesc.dataDesc(style='visibility: hidden;') Your home phone number eg. 4035555555
         br
         
-        label(for='busiNum') Business phone number:
+        label(for='busiNum') Business phone number: *
         br
         input#busiNnum.formInput(type='text' name='busNum' placeholder='business phone #' onfocus="showDesc('busiDesc')" onblur="hideDesc('busiDesc')")
         p#busiDesc.dataDesc(style='visibility: hidden;') Your business phone number eg. 4035555555
         br
         
-        label(for='pass') Password:
+        label(for='pass') Password: *
         br
         input#pass.formInput(type='password' name='password' onfocus="showDesc('passDesc')" onblur="hideDesc('passDesc')")
         p#passDesc.dataDesc(name='password' style='visibility: hidden;') Your desired password, not your birthday! eg. travelWithUS881
         br
         
-    // register / reset buttons
-    input(type='submit' value='Register' onclick='return validate()')
-    input(type='reset' onclick="confirm('Are you sure you want to reset the form?')")
-p
+        // register / reset buttons
+        input(type='submit' value='Register' onclick='return validate()')
+        input(type='reset' onclick="confirm('Are you sure you want to reset the form?')")
+
+p(style="margin-left: 25px;")
     | Already registered?
     button#logger
-        a(href='login') Login
+        a(href='login')  Login
 
 // missing data fields error message
 p#dataMiss

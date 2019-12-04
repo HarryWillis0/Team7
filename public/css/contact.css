@@ -1,6 +1,7 @@
 body {
     background: url("../album/bg.jpg") no-repeat;
     background-size: cover;
+    font-family: "Helvetica Neue", Helvetica, Arial;
 }
 /*set logo*/
 #logo {

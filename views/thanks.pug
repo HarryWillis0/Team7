@@ -12,22 +12,22 @@ head
     link(rel='stylesheet' type='text/css' href='css/form.css')
 
     title THANK YOU
-#outer
-div
-    img#logo(src='album/00.png' alt='')
-    p.header Travel Experts
-.Nav
-    nav#nav
-    li
-        a(href='/') Travel Experts
-    li
-        a(href='vacation') Vacation Package
-    li
-        a(href='register') Register
-    li
-        a(href='contact') Contact
-    li
-        a(href='login' style='visibility: #{showIn}') #{logIn}
-        a(href='logout' style='visibility: #{showOut}') #{logOut}
 
+    div
+        img#logo(src='album/00.png' alt='')
+        p.header Travel Experts
+    .Nav
+        nav#nav
+            li
+                a(href='/') Travel Experts
+            li
+                a(href='vacation') Vacation Package
+            li
+                a(href='register') Register
+            li
+                a(href='contact') Contact
+            li
+                a(href='login' style='visibility: #{showIn}') #{logIn}
+                a(href='logout' style='visibility: #{showOut}') #{logOut}
+                
 h1#seeYou Thank you #{greeting}
