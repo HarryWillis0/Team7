@@ -1,0 +1,96 @@
+/*
+ * css for thanks, registration, and bookings webpages for Travel Experts website
+ *
+ * Author: Harry Willis
+ */
+body {
+    background: url("../album/goodbyeNeon.jpg");
+    background-color: #969696;
+}
+input[type="text"], input[type="password"] {
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+}
+.dataDesc {
+    display: inline-block;
+    font-size: small;
+}
+.formInput {
+    display: inline-block;
+    border: solid 1px black;
+}
+#dataMiss {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    text-align: center;
+    font-weight: bold;
+}
+#custReg {
+    position: relative;
+    padding-top: 150px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#book{
+    position: relative;
+    margin-top: 75px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: white;
+    width: 300px;
+    border: solid 1px black;
+    border-radius: 4px;
+}
+#bookForm{
+    margin-top: 200px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+label {
+    position: relative;
+    margin-top: 15px;
+}
+input[type="submit"], [type="reset"] {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 25px;
+    border-radius: 4px;
+    background-color: #d35400;
+    border: none;
+    padding: 10px;
+    width: 100px;
+}
+#logger {
+    background-color: #969696;
+}
+select {
+    display: block;
+    height: 40px;
+    width: 300px;
+    border: solid 1px #969696;
+}
+#bookBtn {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 95px;
+
+    border-radius: 4px;
+    background-color: #d35400;
+    border: none;
+    padding: 10px;
+    width: 100px;
+}
+#seeYou {
+    position: fixed;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+/*#byeImg {
+
+}*/

@@ -55,7 +55,11 @@ app.get("/", (req, res) => {
 app.get("/contact", (req, res) => {
     sess = req.session;
 
-    res.render(__dirname + "/views/contact");
+    if (sess.firstName) {
+        res.render("contact", {logOut: "Logout", bookIfIn: "Book Now!"});
+    } else {
+        res.render("contact", {logIn: "Login"});
+    }
 });
 
 /* serve register page */
@@ -85,14 +89,18 @@ app.post("/sendData", (req, res) => {
 app.get("/vacation", (req, res) => {
     sess = req.session;
 
-    res.render(__dirname + "/views/vacation.pug");
+    if (sess.firstName) {
+        res.render("vacation", {logOut: "Logout", bookIfIn: "Book Now!"});
+    } else {
+        res.render("vacation", {logIn: "Login"});
+    }
 });
 
 /* serve login page */
 app.get("/login", (req, res) => {
     sess = req.session;
 
-    res.render(__dirname + "/views/login.pug");
+    res.render("login");
 });
 
 /* serve login post */
@@ -130,7 +138,7 @@ app.get("/bookings", (req, res) => {
     
     /* serve different options on page depending if user logged in */
     if (sess.firstName) {
-        res.render(__dirname + "/views/bookings.pug", {loggedIn: "Book a trip now!"});
+        res.render(__dirname + "/views/bookings.pug", {loggedIn: "Book a trip now!", logOut: "Logout"});
     } else {
         res.render("login", {needInToBook: "Sorry you must login before booking."});
     }
@@ -167,7 +175,7 @@ app.use("/logout", (req, res) => {
         if(err) throw err;
 
         /* serve personalized thank you page */
-        res.render("thanks.pug", {greeting: "for visiting " + currFName + ". Hope to see you soon!"});
+        res.render("thanks.pug", {greeting: "for visiting " + currFName + ". Hope to see you soon!", logIn: "Login"});
     })
 });
 

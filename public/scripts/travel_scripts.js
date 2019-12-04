@@ -15,6 +15,7 @@ function validate() {
     var formData = document.forms[0];
     var postReg = /^[a-z]\d[a-z](\s|-)*\d[a-z]\d$/i;
     var errorMsg = "";
+    var flag = false;
 
     /* loop through fields testing for empty data */
     for (i = 0; i < formData.elements.length; i++) {
@@ -23,16 +24,17 @@ function validate() {
         if (formData.elements[i].type == "text" || formData.elements[i].type == "password") {
             /* test for empty field */
             if (formData.elements[i].value == "") {
-                errorMsg += formData.elements[i].placeholder + " must have a value<br />";
+                flag = true;
             } 
         }
     }
 
     if (!postReg.test(document.getElementById("postal").value)) {
-        errorMsg += "invalid postal code";
+        errorMsg += "Invalid postal code";
     }
 
-    if (errorMsg != "") {
+    if (flag) {
+        errorMsg += "<br />Required fields are missing"
         document.getElementById("dataMiss").innerHTML = errorMsg;
         return false;
     }
