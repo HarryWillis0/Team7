@@ -1,0 +1,109 @@
+/*CSS for Header*/
+header {
+    /*border: #fa1c20 solid 3px;*/
+    height: 80px;
+
+}
+.logo {
+    float: left;
+    width: 10%;
+    height: 80px;
+}
+.agenyName {
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+    font-family: 'Lobster', cursive;
+    color: red;
+    float: left;
+    width: 30%;
+    font-size: 50px;
+    text-shadow: 10px 10px 3px #fff11f;
+}
+.Nav {
+    float: left;
+    width: 60%;
+    height: 80px;
+}
+#nav {
+    font-size: 1.8rem;
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 28px;
+    padding: 0;
+    overflow: hidden;
+}
+li {
+    float: left;
+}
+a:link, a:visited {
+    display: flow;
+    width: 120px;
+    font-weight: bold;
+    color: #4c9bff;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+a:hover, a:active {
+    background-color: #fff0b6;
+}
+
+/*CSS for body*/
+body {
+    background: url("/album/bg.jpg");
+    background-size: cover;
+    /*background-color: #8DD4E8;*/
+    /*border: 1px solid black;*/
+    height: 700px;
+    clear: both;
+}
+.outer{
+    /*float: left;*/
+    text-align: center;
+    /*border: 1px solid red;*/
+    width: 1200px;
+    height: 500px;
+    margin: 65px auto;
+}
+fieldset {
+    border: 0;
+}
+h1 {
+    font-size: 40px;
+    color: #5623fa;
+}
+#leftside {
+    float: left;
+    width: 358px;
+    height: 500px;
+    background: url("/public/album/left2.jpg");
+}
+#rightside {
+    float:left;
+    width: 840px;
+    height: 500px;
+    border: #94fdff solid 1px;
+    /*background-color: green;*/
+}
+content1 content2 content3 content4 {
+    float: left;
+}
+input {
+    border: #21f7fa solid 1px;
+}
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Rubik|Work+Sans&display=swap');
+p {
+    font-size: 1.5vw;
+    text-align: center;
+    color: #E83828;
+    font-family: 'Dancing Script', cursive;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3vw;
+    color: #e8421e;
+    padding-top: auto;
+    font-family: 'Dancing Script', cursive;
+}

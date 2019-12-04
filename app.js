@@ -2,7 +2,7 @@
  * app.js
  * handle client requests and serve appropiate pages
  * 
- * Authors: Harry Willis, Evan Tucker
+ * Authors: Harry Willis, Evan Tucker, Joe Yang
  */
 const express = require("express");
 const app = express();
@@ -180,6 +180,7 @@ app.get("/get-packages", (req, res) => {
 
     });
 })
+
 app.get("/get-agents", (req, res) => {
     con.query("SELECT * FROM agents", function(err, result) {
         if (err) throw err;
@@ -187,6 +188,21 @@ app.get("/get-agents", (req, res) => {
         res.send(result);
     })
 })
+
+app.get("/get-agency", function (req, res) {
+    conn.query("SELECT AgencyId, AgncyAddress,AgncyPhone FROM agencies", function (err, result) {
+        if (err) throw err;
+        // console.log(result)
+        res.send(result)
+    })
+});
+
+app.get("/get-agents", function (req, res) {
+    conn.query("SELECT * FROM agents", function (err, result) {
+        if (err) throw err;
+        res.send(result)
+    })
+});
 
 /* serve any other requests to 404 page */
 app.use((req, res) => {
