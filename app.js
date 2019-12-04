@@ -32,7 +32,7 @@ app.set("views", path.join(__dirname, "views"));
 var con = require("./public/scripts/DBConnect.js");
 
 /* parse incoming requests */
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 /* tell express where to look for pug files */
 app.set("views", path.join(__dirname, "views"));
@@ -43,11 +43,11 @@ app.set("view engine", "pug");
 /* serve home page */
 app.get("/", (req, res) => {
     sess = req.session;
-    
+
     if (sess.firstName) {
-        res.render("index", {logOut: "Logout", bookIfIn: "Book Now!"});
+        res.render("index", { logOut: "Logout", bookIfIn: "Book Now!" });
     } else {
-        res.render("index", {logIn: "Login"});
+        res.render("index", { logIn: "Login" });
     }
 });
 
@@ -75,14 +75,14 @@ app.post("/sendData", (req, res) => {
 
     /* insert new customer into database */
     inCust.insertCust(req.body, conn);
-    
+
     /* log them in */
     sess.firstName = req.body.firstname;
     sess.lastName = req.body.lastname;
     sess.email = req.body.email;
-    
+
     /* serve a personalized thank you page */
-    res.render('thanks', {greeting: "for registering with us " + sess.firstName + "!", logOut: "Logout"});
+    res.render('thanks', { greeting: "for registering with us " + sess.firstName + "!", logOut: "Logout" });
 });
 
 /* serve vacation page */
@@ -111,10 +111,10 @@ app.post("/login", (req, result) => {
         /* act on callback */
         if (success) {
             /* login successful */
-            
+
             /* get their name from db to update session for some personalization */
             var getName = "SELECT `CustFirstName`, `CustLastName` FROM `customers` WHERE CustEmail = ?";
-            
+
             conn.query(getName, [req.body.userName], (err, res, fields) => {
                 /* this has to have a result if login was successful */
 
@@ -122,12 +122,12 @@ app.post("/login", (req, result) => {
                 sess.firstName = res[0].CustFirstName;
                 sess.lastName = res[0].CustLastName;
                 sess.email = req.body.userName;
-                
+
                 /* username and password matched, send home */
-                result.render("index", {logOut: "Logout", bookIfIn: "Book now!"});
+                result.render("index", { logOut: "Logout", bookIfIn: "Book now!" });
             });
         } else {
-            result.render("login.pug", {errLogin: "Sorry we couldn't find you..."});
+            result.render("login.pug", { errLogin: "Sorry we couldn't find you..." });
         }
     });
 });
@@ -135,32 +135,32 @@ app.post("/login", (req, result) => {
 /* serve bookings page */
 app.get("/bookings", (req, res) => {
     sess = req.session;
-    
+
     /* serve different options on page depending if user logged in */
     if (sess.firstName) {
         res.render(__dirname + "/views/bookings.pug", {loggedIn: "Book a trip now!", logOut: "Logout"});
     } else {
-        res.render("login", {needInToBook: "Sorry you must login before booking."});
+        res.render("login", { needInToBook: "Sorry you must login before booking." });
     }
 });
 
 /* serve bookings post */
-app.post("/book", (req, res) => {    
+app.post("/book", (req, res) => {
     sess = req.session;
-    
+
     /* get customerID */
     getCustId.findId(sess.firstName, sess.lastName, sess.email, conn, (id) => {
         /* act on callback */
         if (id) {
             /* create booking */
             inBk.insertBook(req.body, id, conn);
-            
+
             /* serve personalized thank you page */
-            res.render("thanks.pug", {greeting: "for taking an adventure with us " + sess.firstName + "!", logOut: "Logout"});
+            res.render("thanks.pug", { greeting: "for taking an adventure with us " + sess.firstName + "!", logOut: "Logout" });
         } else {
             console.log("couldn't find user to make booking");
 
-            res.render("bookings.pug", {errFind: "Sorry we couldn't find you in our system. You may need to register first."});
+            res.render("bookings.pug", { errFind: "Sorry we couldn't find you in our system. You may need to register first." });
         }
     });
 });
@@ -172,7 +172,7 @@ app.use("/logout", (req, res) => {
 
     /* close session and send customer to personalized thanks page */
     req.session.destroy((err) => {
-        if(err) throw err;
+        if (err) throw err;
 
         /* serve personalized thank you page */
         res.render("thanks.pug", {greeting: "for visiting " + currFName + ". Hope to see you soon!", logIn: "Login"});
@@ -187,7 +187,7 @@ app.get("/get-packages", (req, res) => {
         res.send(result);
 
     });
-})
+});
 
 app.get("/get-agents", (req, res) => {
     con.query("SELECT * FROM agents", function(err, result) {
@@ -195,10 +195,10 @@ app.get("/get-agents", (req, res) => {
         //console.log(result);
         res.send(result);
     })
-})
+});
 
 app.get("/get-agency", function (req, res) {
-    conn.query("SELECT AgencyId, AgncyAddress,AgncyPhone FROM agencies", function (err, result) {
+    conn.query("SELECT AgencyId, AgncyAddress,AgncyPhone,AgncyCity,AgncyPostal FROM agencies", function (err, result) {
         if (err) throw err;
         // console.log(result)
         res.send(result)
@@ -206,7 +206,7 @@ app.get("/get-agency", function (req, res) {
 });
 
 app.get("/get-agents", function (req, res) {
-    conn.query("SELECT * FROM agents", function (err, result) {
+    conn.query("SELECT * FROM agents ORDER BY `AgencyId`", function (err, result) {
         if (err) throw err;
         res.send(result)
     })

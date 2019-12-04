@@ -2,24 +2,42 @@ doctype html
 head
   // <meta charset="utf-8">
   title Packages
-  link(rel='stylesheet' href='/css/stylesheet.css')
-  style.
-    .name {
-    background: black;
-    }
-table#packagesTable
-  tr
-script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
-script.
-    $.ajax({
-    url: './get-packages',
-    context: document.body
-    }).done((result) => {
-      for (i = 0; i < result.length; i++) {
-        document.getElementById('packagesTable').innerHTML += ("<td class='name'>" + result[i]['PkgName'] + "</td> </br>")
-        document.getElementById('packagesTable').innerHTML += ("<td id='startDate'>" + result[i]['PkgStartDate'] + "</td> </br>")
-        document.getElementById('packagesTable').innerHTML += ("<td id='endDate'>" + result[i]['PkgEndDate'] + "</td> </br>")
-        document.getElementById('packagesTable').innerHTML += ("<td id='desc'>" + result[i]['PkgDesc'] + "</td> </br>")
-        document.getElementById('packagesTable').innerHTML += ("<td id='price'> $" + result[i]['PkgBasePrice'] + "<a href='/bookings.html' class='btn btn-default'>Book Now</a></td> </br>")
-      }
-  });
+  link(rel='stylesheet' href='/css/index.css')
+  link(rel='stylesheet' href='/css/tableStyle.css')
+  div
+    img#logo(src='album/00.png' alt='')
+    p.header Packages
+  .Nav
+    nav#nav
+      li
+        a(href='/') Travel Experts
+      li
+        a(href='vacation') Vacation Packages
+      li
+        a(href='register') Register
+      li
+        a(href='contact') Contact
+      li 
+        a(href='bookings') Book Now!
+      li
+        a(href='login' style='visibility: #{showIn}') #{logIn}
+        a(href='logout' style='visibility: #{showOut}') #{logOut}
+
+.wrapper
+    table#table
+    div
+    tr.row
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
+    script.
+        $.ajax({
+        url: './get-packages',
+        context: document.body
+        }).done((result) => {
+        for (i = 0; i < result.length; i++) {
+        document.getElementById('table').innerHTML += ("<td class='rowblue'>" + result[i]['PkgName'] + "</td> </br>")
+        document.getElementById('table').innerHTML += ("<td class='title'>Leave On:  </td><td class='cell'>" + result[i]['PkgStartDate'] + "</td> </br>")
+        document.getElementById('table').innerHTML += ("<td class='title'>Return On:  </td><td class='cell'>" + result[i]['PkgEndDate'] + "</td> </br>")
+        document.getElementById('table').innerHTML += ("<td class='title'>Description:  </td><td class='cell'>" + result[i]['PkgDesc'] + "</td> </br>")
+        document.getElementById('table').innerHTML += ("<td class='title'>Cost:  </td><td class='cell'> $" + result[i]['PkgBasePrice'] + "<form action='/bookings' method='get' target='blank'><button type='submit' class='btn'>Book Now</button></form></td> </br>")
+        }
+        });
