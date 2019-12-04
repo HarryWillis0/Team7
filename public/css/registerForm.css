@@ -1,0 +1,20 @@
+input[type="text"], input[type="password"] {
+    width: 25%;
+    height: 25px;
+    border-radius: 5px;
+}
+.dataDesc {
+    display: inline-block;
+    font-size: small;
+}
+.formInput {
+    display: inline-block;
+    border: solid 1px black;
+}
+#dataMiss {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    text-align: center;
+    font-weight: bold;
+}

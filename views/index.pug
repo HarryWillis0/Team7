@@ -22,6 +22,11 @@ head
         a(href='register') Register
       li
         a(href='contact') Contact
+      li 
+        a(href='bookings') Book Now!
+      li
+        a(href='login' style='visibility: #{showIn}') #{logIn}
+        a(href='logout' style='visibility: #{showOut}') #{logOut}
   .leftSide
     ul#theUl
       li.current
@@ -35,7 +40,7 @@ head
         div(style='position:relative;')
           img#img2(src='album/5.png' alt='')
           #content2(style=' font-size: 30px; position:absolute; z-index:2; left:10px; top:10px')
-            | mysterious Egypt 10 days tour.
+            | Mysterious Egypt 10 days tour.
             | We Have The Perfect Accommodation For You.
         a(href='https://google.ca') Learn more details
       li
