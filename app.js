@@ -2,7 +2,7 @@
  * app.js
  * handle client requests and serve appropiate pages
  * 
- * Author: Harry Willis
+ * Authors: Harry Willis, Evan Tucker
  */
 const express = require("express");
 const app = express();
@@ -15,14 +15,8 @@ app.use(express.static('./public'));
 app.use(express.static('./views', { extensions: ["html"] }));
 app.set('view engine', 'pug');
 
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "password",
-    database: "travelexperts"
-});
-
-
+//Imports the Database connection script from DBConnect.js
+var con = require("./public/scripts/DBConnect.js");
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -48,12 +42,19 @@ app.get("/vacation.html", (req, res) => {
 
 //page to run the query, gets called by ajax later.
 app.get("/get-packages", (req, res) => {
-    con.query("SELECT * FROM packages", function(err, result) {
+    con.query("SELECT * FROM packages WHERE PkgStartDate > date_add(NOW(), INTERVAL -1 MONTH)", function(err, result) {
         if (err) throw err;
         //console.log(result);
         res.send(result);
 
     });
+})
+app.get("/get-agents", (req, res) => {
+    con.query("SELECT * FROM agents", function(err, result) {
+        if (err) throw err;
+        //console.log(result);
+        res.send(result);
+    })
 })
 
 /* serve any other requests to 404 page */
