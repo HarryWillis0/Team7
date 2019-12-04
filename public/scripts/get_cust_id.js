@@ -7,10 +7,10 @@
 const mysql = require("mysql");
 
 module.exports = {
-    findId: function(userFName, userLName, conn, callback) {
-        var sql = "SELECT CustomerId FROM `customers` WHERE CustFirstName = ? AND CustLastName = ?";
+    findId: function(userFName, userLName, email, conn, callback) {
+        var sql = "SELECT CustomerId FROM `customers` WHERE CustFirstName = ? AND CustLastName = ? AND CustEmail = ?";
         
-        conn.query(sql, [userFName, userLName], (err, res, fields) => {
+        conn.query(sql, [userFName, userLName, email], (err, res, fields) => {
             if (res.length > 0) {
                 /* found user in database */
                 callback(res[0].CustomerId);

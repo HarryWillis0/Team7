@@ -6,3 +6,6 @@ head
     meta(charset='UTF-8')
     title THANK YOU
 h1 Thank you #{greeting}
+a(href='/' style='position: right') Home
+form(action='/logout' method='POST')
+    button(type='submit') #{logOut}

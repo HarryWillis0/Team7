@@ -37,8 +37,12 @@ app.set("view engine", "pug");
 /* serve home page */
 app.get("/", (req, res) => {
     sess = req.session;
-
-    res.sendFile(__dirname + "/views/index.html");
+    
+    if (sess.firstName) {
+        res.render("index", {logOut: "Logout", bookIfIn: "Book Now!"});
+    } else {
+        res.render("index", {logIn: "Login"});
+    }
 });
 
 /* serve contact page */
@@ -62,10 +66,13 @@ app.post("/sendData", (req, res) => {
     /* insert new customer into database */
     inCust.insertCust(req.body, conn);
     
+    /* log them in */
     sess.firstName = req.body.firstname;
+    sess.lastName = req.body.lastname;
+    sess.email = req.body.email;
     
     /* serve a personalized thank you page */
-    res.render('thanks', {greeting: "for registering with us " + sess.firstName + "!"});
+    res.render('thanks', {greeting: "for registering with us " + sess.firstName + "!", logOut: "Logout"});
 });
 
 /* serve vacation page */
@@ -83,16 +90,16 @@ app.get("/login", (req, res) => {
 });
 
 /* serve login post */
-app.post("/login", (req, res) => {
+app.post("/login", (req, result) => {
     sess = req.session;
 
-    verify.verify(req.body, conn, (result) => {
+    verify.verify(req.body, conn, (success) => {
         /* act on callback */
-        if (result) {
+        if (success) {
             /* login successful */
             
             /* get their name from db to update session for some personalization */
-            var getName = "SELECT `CustFirstName`, `CustFirstName` FROM `customers` WHERE CustEmail = ?";
+            var getName = "SELECT `CustFirstName`, `CustLastName` FROM `customers` WHERE CustEmail = ?";
             
             conn.query(getName, [req.body.userName], (err, res, fields) => {
                 /* this has to have a result if login was successful */
@@ -101,12 +108,12 @@ app.post("/login", (req, res) => {
                 sess.firstName = res[0].CustFirstName;
                 sess.lastName = res[0].CustLastName;
                 sess.email = req.body.userName;
+                
+                /* username and password matched, send home */
+                result.render("index", {logOut: "Logout", bookIfIn: "Book now!"});
             });
-            
-            /* username and password matched, send home */
-            res.sendFile(__dirname + "/views/index.html");
         } else {
-            res.render("login.pug", {errLogin: "Sorry we couldn't find you..."});
+            result.render("login.pug", {errLogin: "Sorry we couldn't find you..."});
         }
     });
 });
@@ -114,23 +121,28 @@ app.post("/login", (req, res) => {
 /* serve bookings page */
 app.get("/bookings", (req, res) => {
     sess = req.session;
-
-    res.render(__dirname + "/views/bookings.pug");
+    
+    /* serve different options on page depending if user logged in */
+    if (sess.firstName) {
+        res.render(__dirname + "/views/bookings.pug", {loggedIn: "Book a trip now!"});
+    } else {
+        res.render("login", {needInToBook: "Sorry you must login before booking."});
+    }
 });
 
 /* serve bookings post */
 app.post("/book", (req, res) => {    
     sess = req.session;
-
+    
     /* get customerID */
-    getCustId.findId(req.body.userFName, req.body.userLName, conn, (id) => {
+    getCustId.findId(sess.firstName, sess.lastName, sess.email, conn, (id) => {
         /* act on callback */
         if (id) {
             /* create booking */
             inBk.insertBook(req.body, id, conn);
             
             /* serve personalized thank you page */
-            res.render("thanks.pug", {greeting: "for taking an adventure with us " + req.body.userFName + "!"});
+            res.render("thanks.pug", {greeting: "for taking an adventure with us " + sess.firstName + "!", logOut: "Logout"});
         } else {
             console.log("couldn't find user to make booking");
 
@@ -140,13 +152,15 @@ app.post("/book", (req, res) => {
 });
 
 /* serve logout */
-app.post("/logout", (req, res) => {
+app.use("/logout", (req, res) => {
     /* save customer name */
     var currFName = sess.firstName;
 
     /* close session and send customer to personalized thanks page */
     req.session.destroy((err) => {
         if(err) throw err;
+
+        /* serve personalized thank you page */
         res.render("thanks.pug", {greeting: "for visiting " + currFName + ". Hope to see you soon!"});
     })
 });

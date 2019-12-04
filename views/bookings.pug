@@ -34,16 +34,7 @@ form(action='/book' method='POST')
         option(value='G') Group
         option(value='L') Leisure
     br
-    
-    // is customer registered
-    label(for='userFName') Enter your first and last name if you have registered with us before:
-    br
-    
-    input(style='display: block;' type='text' name='userFName' placeholder='first name')
-    br
-    
-    input(style='display: block;' type='text' name='userLName' placeholder='last name')
-    br
-    
-    input(style='display: block;' type='submit' value='Book')
+
+    button(style='display:block;' type='submit') #{loggedIn}
+
 p #{errFind}
