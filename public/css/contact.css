@@ -1,0 +1,78 @@
+body {
+    background: url("../album/bg.jpg") no-repeat;
+    background-size: cover;
+}
+#logo {
+    width: 100px;
+    float: left;
+    margin: 20px auto auto 40px;
+}
+
+div .header {
+    float: left;
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+    font-family: 'Lobster', cursive;
+    color: red;
+    margin: 2% auto auto 1%;
+    font-size: 2.5rem;
+    text-shadow: 5px 5px 3px #fff11f;
+}
+
+div .Nav {
+    /*float: right;*/
+    margin: 0 100px 10px auto;
+    opacity: 2;
+}
+
+#nav {
+    font-size: 1.5rem;
+    list-style-type: none;
+    margin-top: 15px;
+    padding-left: 200px;
+    overflow: hidden;
+    line-height: 150px;
+}
+
+li {
+    float: left;
+}
+
+.Nav a:link,
+.Nav a:visited {
+    display: flow;
+    width: 50px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.Nav a:hover,
+.Nav a:active {
+    background-color: #fff0b6;
+}
+
+body #agencyTable {
+    /*float: left;*/
+    text-align: center;
+    margin: 100px auto auto 15%;
+    border: 1px solid black;
+    font-size: 2.5rem;
+}
+body #agentsTable {
+    text-align: center;
+    font-size: 1.2rem;
+    float: right;
+    margin: -25% 30% auto auto;
+    border: 1px solid black;
+}
+
+#agencyTable .id {
+    background-color: #13fff3;
+}
+
+#agentsTable .id {
+    background-color: #ffd41e;
+}

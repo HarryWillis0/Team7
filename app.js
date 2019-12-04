@@ -190,7 +190,7 @@ app.get("/get-agents", (req, res) => {
 })
 
 app.get("/get-agency", function (req, res) {
-    conn.query("SELECT AgencyId, AgncyAddress,AgncyPhone FROM agencies", function (err, result) {
+    conn.query("SELECT AgencyId, AgncyAddress,AgncyPhone,AgncyCity,AgncyPostal FROM agencies", function (err, result) {
         if (err) throw err;
         // console.log(result)
         res.send(result)
@@ -198,7 +198,7 @@ app.get("/get-agency", function (req, res) {
 });
 
 app.get("/get-agents", function (req, res) {
-    conn.query("SELECT * FROM agents", function (err, result) {
+    conn.query("SELECT * FROM agents ORDER BY `AgencyId`", function (err, result) {
         if (err) throw err;
         res.send(result)
     })
