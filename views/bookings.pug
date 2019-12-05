@@ -6,7 +6,7 @@ head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     
-    script(type='text/javascript' src='../scripts/travel_scripts.js')
+    script(type='text/javascript' src='/scripts/travel_scripts.js')
     
     link(rel='stylesheet' type='text/css' href='css/index.css')
     link(rel='stylesheet' type='text/css' href='css/form.css')
@@ -58,6 +58,6 @@ div#bookForm
             option(value='L') Leisure
         br
 
-        button#bookBtn(type='submit') #{loggedIn}
+        input#bookBtn(type='submit' value='Book Now' onclick='return validate()')
 
 p #{errFind}

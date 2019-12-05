@@ -30,6 +30,7 @@ function validate() {
     }
 
     if (!postReg.test(document.getElementById("postal").value)) {
+        flag = true;
         errorMsg += "Invalid postal code";
     }
 

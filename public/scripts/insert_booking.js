@@ -12,7 +12,6 @@ module.exports = {
         /* insert sql statement */
         var sql = "INSERT INTO `bookings`(`BookingId`, `BookingDate`, `BookingNo`, `TravelerCount`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (?, ?, ?, ?, ?, ?, ?)";
         
-        console.log(body.numTrav);
         /* data to enter */
         var data = [null, moment().format(), 'MMMMM', body.numTrav, id, body.tripType, null];
         

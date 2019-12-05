@@ -127,7 +127,6 @@ app.post("/login", (req, result) => {
                 result.render("index", { logOut: "Logout", bookIfIn: "Book now!" });
             });
         } else {
-            console.log("here");
             result.render("login", { errLogin: "Sorry we couldn't find you..." });
         }
     });

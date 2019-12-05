@@ -33,9 +33,9 @@ head
 p(style='margin-top: 75px; margin-left: 15px;') #{needInToBook}
 div#logIn
     form(action='/login' method='POST')
-        label(for='username') Username:
+        label(for='username') Email:
         br
-        input#userName(style='display: inline-block;' type='text' name='userName' placeholder='username' onfocus='showDesc(\'userDesc\')' onblur='hideDesc(\'userDesc\')')
+        input#userName(style='display: inline-block;' type='text' name='userName' placeholder='Email' onfocus='showDesc(\'userDesc\')' onblur='hideDesc(\'userDesc\')')
         p#userDesc.dataDesc(style='visibility: hidden; display: inline-block; font-size: small;') The email you used to register
         br
         
