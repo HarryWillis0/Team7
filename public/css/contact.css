@@ -126,14 +126,14 @@ body #agentsTable1 {
     float: right;
     text-align: center;
     font-size: 1rem;
-    margin: -26.5% 12% auto auto;
+    margin: -20.5% 15% auto auto;
 }
 
 body #agentsTable2 {
     float: left;
     text-align: center;
     font-size: 1rem;
-    margin: -26% auto auto 12%;
+    margin: -20% auto auto 15%;
 }
 
 body #agentsTable1 .id {
