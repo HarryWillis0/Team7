@@ -1,3 +1,7 @@
+/*
+    An contact webpage for Travel Experts
+    Author: Yunyang(Joe) Yang
+*/
 body {
     background: url("../album/bg.jpg") no-repeat;
     background-size: cover;
@@ -56,25 +60,86 @@ li {
     background-color: #fff0b6;
 }
 
-body #agencyTable {
+
+/*set agencies and agents tables format*/
+body #agencyTable1 {
     /*float: left;*/
     text-align: center;
-    margin: 100px auto auto 15%;
-    border: 1px solid black;
-    font-size: 2.5rem;
+    margin: 6% auto auto auto;
+    /*border: 1px solid black;*/
+    font-size: 2rem;
+    font-weight: bold;
 }
-body #agentsTable {
+
+body #agencyTable2 {
     text-align: center;
-    font-size: 1.2rem;
-    float: right;
-    margin: -25% 30% auto auto;
-    border: 1px solid black;
+    margin: 2% auto auto auto;
+    font-size: 2rem;
+    font-weight: bold;
 }
-/*set agencies and agent tables format*/
-#agencyTable .id {
+
+body #agencyTable1 .id {
     background-color: #13fff3;
 }
 
-#agentsTable .id {
-    background-color: #ffd41e;
+body #agencyTable2 .id {
+    background-color: #13fff3;
+}
+body #agencyTable1 #show1 {
+    /*margin-left: 100px;*/
+    border-radius: 4px;
+    background-color: #eaff0d;
+    border: none;
+    padding: 10px;
+    width: 200px;
+    transition: all 1s;
+    margin-right: 10px  ;
+}
+body #agencyTable1 #hidden1 {
+    /*margin-left: 100px;*/
+    border-radius: 4px;
+    background-color: #ffefb4;
+    border: none;
+    padding: 10px;
+    transition: all 1s;
+}
+body #agencyTable2 #show2 {
+    /*margin-left: 100px;*/
+    border-radius: 4px;
+    background-color: #eaff0d;
+    border: none;
+    padding: 10px;
+    width: 200px;
+    transition: all 1s;
+    margin-right: 10px  ;
+}
+body #agencyTable2 #hidden2 {
+    /*margin-left: 100px;*/
+    border-radius: 4px;
+    background-color: #ffefb4;
+    border: none;
+    padding: 10px;
+    transition: all 1s;
+}
+
+body #agentsTable1 {
+    float: right;
+    text-align: center;
+    font-size: 1rem;
+    margin: -26.5% 12% auto auto;
+}
+
+body #agentsTable2 {
+    float: left;
+    text-align: center;
+    font-size: 1rem;
+    margin: -26% auto auto 12%;
+}
+
+body #agentsTable1 .id {
+    background-color: #17ff21;
+}
+
+body #agentsTable2 .id {
+    background-color: #17ff21;
 }

@@ -22,7 +22,7 @@ html, body {
 div .header{
     float: left;
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
-    font-family: "Helvetica Neue", Helvetica, Arial;
+    font-family: 'Lobster', cursive;;
     color: red;
     margin: 2% auto auto 1%;
     font-size: 2.5rem;
@@ -62,17 +62,17 @@ li {
 /*set body contents*/
 body #outer .leftSide #content1 {
     @import "https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet";
-    font-family: "Helvetica Neue", Helvetica, Arial;
+    font-family: 'Lobster', cursive;
     text-align: center;
 }
 body #outer .leftSide #content2 {
 @import "https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet";
-    font-family: "Helvetica Neue", Helvetica, Arial;
+    font-family: 'Lobster', cursive;;
     text-align: center;
 }
 body #outer .leftSide #content3 {
 @import "https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet";
-    font-family: "Helvetica Neue", Helvetica, Arial;
+    font-family: 'Lobster', cursive;;
     text-align: center;
 }
 /*set the entire outer size*/

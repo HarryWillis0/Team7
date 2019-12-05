@@ -1,12 +1,13 @@
 //
   An contact webpage for Travel Experts
-  * Author: Yunyang(Joe) Yang
+  Author: Yunyang(Joe) Yang
 
 doctype html
 head
     meta(charset='UTF-8')
     title Contact Info
     link(rel='stylesheet' type='text/css' href='css/contact.css')
+    script(type='text/javascript' src='../scripts/contactScript.js')
 div
     img#logo(src='album/00.png' alt='')
     p.header Contact Us
@@ -25,37 +26,74 @@ div
         li
             a(href='login' style='visibility: #{showIn};')
             a(href='logout' style='visibility: #{showOut};')
-table#agencyTable
+table#agencyTable1
     tr
     script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
     script.
         $.ajax({
-            url: "./get-agency",
+            url: "./get-agency1",
             context: document.body,
             type: 'GET'
         }).done(function(result) {
             //console.log(result);
             for (var i = 0; i < result.length; i++) {
-                document.getElementById("agencyTable").innerHTML += ("<td class='id'>" + "Agency: " + result[i]['AgencyId'] + "</td>");
-                document.getElementById("agencyTable").innerHTML += ("<td class='address'>" + "Address: " + result[i]['AgncyAddress'] + " " + result[i]['AgncyCity'] + "</td>");
-                document.getElementById("agencyTable").innerHTML += ("<td class='phone'>" + "Postal: " + result[i]['AgncyPostal'] + "</td>");
-                document.getElementById("agencyTable").innerHTML += ("<td class='phone'>" + "Phone: " + result[i]['AgncyPhone'] + "</td></br>");
+                document.getElementById("agencyTable1").innerHTML += ("<td class='id'>" + "Agency: " + result[i]['AgencyId'] + "</td>");
+                document.getElementById("agencyTable1").innerHTML += ("<td class='address'>" + "Address: " + result[i]['AgncyAddress'] + " " + result[i]['AgncyCity'] + "</td>");
+                document.getElementById("agencyTable1").innerHTML += ("<td class='postal'>" + "Postal: " + result[i]['AgncyPostal'] + "</td>");
+                document.getElementById("agencyTable1").innerHTML += ("<td class='phone'>" + "Phone: " + result[i]['AgncyPhone'] + "</td>" + "<button id='show1' type='button' onclick='show1Function()'>Show more agents details</button>" + "<button id='hidden1' type='button' onclick='hidden1Function()'>Hidden</button>" + "</br>");
             }
         });
-table#agentsTable
+
+table#agencyTable2
     tr
     script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
     script.
         $.ajax({
-            url: "./get-agents",
+            url: "./get-agency2",
+            context: document.body,
+            type: 'GET'
+        }).done(function(result) {
+            //console.log(result);
+            for (var i = 0; i < result.length; i++) {
+                document.getElementById("agencyTable2").innerHTML += ("<td class='id'>" + "Agency: " + result[i]['AgencyId'] + "</td>");
+                document.getElementById("agencyTable2").innerHTML += ("<td class='address'>" + "Address: " + result[i]['AgncyAddress'] + " " + result[i]['AgncyCity'] + "</td>");
+                document.getElementById("agencyTable2").innerHTML += ("<td class='postal'>" + "Postal: " + result[i]['AgncyPostal'] + "</td>");
+                document.getElementById("agencyTable2").innerHTML += ("<td class='phone'>" + "Phone: " + result[i]['AgncyPhone'] + "</td>" + "<button id='show2' type='button' onclick='show2Function()'>Show more agents details</button>" + "<button id='hidden2' type='button' onclick='hidden2Function()'>Hidden</button>" + "</br>");
+            }
+        });
+
+table#agentsTable1(style='visibility:hidden')
+    tr
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
+    script.
+        $.ajax({
+            url: "./get-agents1",
             context: document.body,
             type: 'GET'
         }).done(function(result) {
             console.log(result);
             for (var i = 0; i < result.length; i++) {
-                document.getElementById("agentsTable").innerHTML += ("<td class='id'>" + "Agency: " + result[i]['AgencyId'] + "</td>");
-                document.getElementById("agentsTable").innerHTML += ("<td class='name'>" + "Agent Name: " + result[i]['AgtFirstName'] + " " + result[i]['AgtLastName'] + "</td>");
-                document.getElementById("agentsTable").innerHTML += ("<td class='phone'>" + "Business Phone:" + result[i]['AgtBusPhone'] + "</td>");
-                document.getElementById("agentsTable").innerHTML += ("<td class='email'>" + "Email: " + result[i]['AgtEmail'] + "</td></br>");
+                document.getElementById("agentsTable1").innerHTML += ("<td class='id'>" + "Agency: " + result[i]['AgencyId'] + "</td>");
+                document.getElementById("agentsTable1").innerHTML += ("<td class='name'>" + "Agent Name: " + result[i]['AgtFirstName'] + " " + result[i]['AgtLastName'] + "</td>");
+                document.getElementById("agentsTable1").innerHTML += ("<td class='phone'>" + "Business Phone:" + result[i]['AgtBusPhone'] + "</td>");
+                document.getElementById("agentsTable1").innerHTML += ("<td class='email'>" + "Email: " + result[i]['AgtEmail'] + "</td></br>");
+            }
+        });
+
+table#agentsTable2(style='visibility:hidden')
+    tr
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
+    script.
+        $.ajax({
+            url: "./get-agents2",
+            context: document.body,
+            type: 'GET'
+        }).done(function(result) {
+            console.log(result);
+            for (var i = 0; i < result.length; i++) {
+                document.getElementById("agentsTable2").innerHTML += ("<td class='id'>" + "Agency: " + result[i]['AgencyId'] + "</td>");
+                document.getElementById("agentsTable2").innerHTML += ("<td class='name'>" + "Agent Name: " + result[i]['AgtFirstName'] + " " + result[i]['AgtLastName'] + "</td>");
+                document.getElementById("agentsTable2").innerHTML += ("<td class='phone'>" + "Business Phone:" + result[i]['AgtBusPhone'] + "</td>");
+                document.getElementById("agentsTable2").innerHTML += ("<td class='email'>" + "Email: " + result[i]['AgtEmail'] + "</td></br>");
             }
         });

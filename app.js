@@ -190,24 +190,30 @@ app.get("/get-packages", (req, res) => {
     });
 });
 
-app.get("/get-agents", (req, res) => {
-    con.query("SELECT * FROM agents", function(err, result) {
-        if (err) throw err;
-        //console.log(result);
-        res.send(result);
-    })
-});
-
-app.get("/get-agency", function (req, res) {
-    conn.query("SELECT AgencyId, AgncyAddress,AgncyPhone,AgncyCity,AgncyPostal FROM agencies", function (err, result) {
+app.get("/get-agency1", function (req, res) {
+    conn.query("SELECT AgencyId, AgncyAddress,AgncyPhone,AgncyCity,AgncyPostal FROM agencies WHERE `AgencyId` = 1", function (err, result) {
         if (err) throw err;
         // console.log(result)
         res.send(result)
     })
 });
 
-app.get("/get-agents", function (req, res) {
-    conn.query("SELECT * FROM agents ORDER BY `AgencyId`", function (err, result) {
+app.get("/get-agency2", function (req, res) {
+    conn.query("SELECT AgencyId, AgncyAddress,AgncyPhone,AgncyCity,AgncyPostal FROM agencies WHERE `AgencyId` = 2", function (err, result) {
+        if (err) throw err;
+        // console.log(result)
+        res.send(result)
+    })
+});
+
+app.get("/get-agents1", function (req, res) {
+    conn.query("SELECT * FROM `agents` WHERE `AgencyId` = 1", function (err, result) {
+        if (err) throw err;
+        res.send(result)
+    })
+});
+app.get("/get-agents2", function (req, res) {
+    conn.query("SELECT * FROM `agents` WHERE `AgencyId` = 2", function (err, result) {
         if (err) throw err;
         res.send(result)
     })
