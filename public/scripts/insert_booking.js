@@ -12,8 +12,9 @@ module.exports = {
         /* insert sql statement */
         var sql = "INSERT INTO `bookings`(`BookingId`, `BookingDate`, `BookingNo`, `TravelerCount`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (?, ?, ?, ?, ?, ?, ?)";
         
+        console.log(body.numTrav);
         /* data to enter */
-        var data = [null, moment().format(), 'MMMMM', 1, id, body.tripType, null];
+        var data = [null, moment().format(), 'MMMMM', body.numTrav, id, body.tripType, null];
         
         conn.query(sql, data, function(err, result, fields) {
             if (err) throw err;
