@@ -7,6 +7,7 @@ head
   div
     img#logo(src='album/00.png' alt='')
     p.header Packages
+    // Header created by Joe, used on each page for consistency on the NAV bar
   .Nav
     nav#nav
       li
@@ -28,6 +29,11 @@ head
     div
     tr.row
     script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
+   
+    //With help from Nelson, I was able to make posts with AJAX in order to display table data in the database
+    //The function simply gets the results from the query on app.js, and uses a for loop to input each piece of row data
+    //into an HTML table using innerHTML
+   
     script.
         $.ajax({
         url: './get-packages',
