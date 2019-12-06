@@ -14,8 +14,8 @@ Authors: Harry Willis, Evan Tucker, Yunyang (Joe) Yang
 
 ## Database
 - We made some modifications to the database given to us
-- The important one was adding passwords to the customer table
-  - This will cause issues if you are using the database given to us as our code for customer registration relies on inputting a password field
+- The important one was adding passwords to the customer table which allowed us to add login functionality
+  - This may cause issues if you are using the database given to us, as our code for customer registration relies on inputting a password field
 
 ## Known Bugs
 - There is no validation on the booking a package form
