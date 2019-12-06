@@ -1,6 +1,6 @@
 /**
  * get_cust_id.js
- * a module to insert a new booking into travelexperts database
+ * a module to get a customer's id, if it exists, from travelexperts database
  * 
  * Author: Harry Willis
  */

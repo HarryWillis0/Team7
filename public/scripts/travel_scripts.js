@@ -29,17 +29,20 @@ function validate() {
         }
     }
 
+    /* test postal code against regex */
     if (!postReg.test(document.getElementById("postal").value)) {
         flag = true;
         errorMsg += "Invalid postal code";
     }
 
+    /* see if some data was invalid */
     if (flag) {
         errorMsg += "<br />Required fields are missing"
         document.getElementById("dataMiss").innerHTML = errorMsg;
         return false;
     }
 
+    /* data is valid, get confirmation from user to register */
     return confirm("Do you want to continue registering?");
 }
 
