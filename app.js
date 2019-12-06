@@ -24,12 +24,12 @@ var sess;
 
 /* serve css/js/image files */
 app.use(express.static('./public'));
-app.use(express.static('./views', { extensions: ["html"] }));
-app.set('view engine', 'pug');
-app.set("views", path.join(__dirname, "views"));
 
-//Imports the Database connection script from DBConnect.js
-var con = require("./public/scripts/DBConnect.js");
+/* tell express what template engine we are using*/
+app.set('view engine', 'pug');
+
+/* tell express where to look for pug files */
+app.set("views", path.join(__dirname, "views"));
 
 /* parse incoming requests */
 app.use(express.urlencoded({ extended: true }));
@@ -181,7 +181,7 @@ app.use("/logout", (req, res) => {
 
 //page to run the query, gets called by ajax later.
 app.get("/get-packages", (req, res) => {
-    con.query("SELECT * FROM packages WHERE PkgStartDate > date_add(NOW(), INTERVAL -1 MONTH)", function(err, result) {
+    conn.query("SELECT * FROM packages WHERE PkgStartDate > date_add(NOW(), INTERVAL -1 MONTH)", function(err, result) {
         if (err) throw err;
         //console.log(result);
         res.send(result);
