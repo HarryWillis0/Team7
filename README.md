@@ -1,6 +1,7 @@
 # Team7
-JavaScript, HTML, and CSS project for OOSD
+JavaScript, HTML, CSS, Node, and MySQL project for OOSD
 
+Authors: Harry Willis, Evan Tucker, Yunyang (Joe) Yang
 
 ## Dependencies:
 
