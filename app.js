@@ -34,12 +34,6 @@ app.set("views", path.join(__dirname, "views"));
 /* parse incoming requests */
 app.use(express.urlencoded({ extended: true }));
 
-/* tell express where to look for pug files */
-app.set("views", path.join(__dirname, "views"));
-
-/* tell express we are using pug template engine */
-app.set("view engine", "pug");
-
 /* serve home page */
 app.get("/", (req, res) => {
     sess = req.session;
